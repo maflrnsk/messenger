@@ -1,0 +1,346 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Verdana, Tahoma, sans-serif;
+    background: linear-gradient(135deg, #4a90e2, #9013fe);
+    color: white;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    font-size: 14px;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    gap: 10px;
+}
+
+header img{
+    margin-left: 10px;
+    height: 30px;
+    width: 30px;
+}
+
+header div{
+    margin-right: 10px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+header div a{
+    text-decoration: none;
+    color: white;
+}
+
+.index-body {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: inherit;
+    gap: 30px;
+}
+
+.login-body, .register-body, .profile-body{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.8);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    padding: 30px;
+    gap: 30px;
+    width: 400px;
+}
+
+.profile-body {
+    margin: 30px auto 0;
+    background-color: transparent;
+    box-shadow: none;
+    gap: 15px;
+    height: auto;
+}
+
+.greeting{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+}
+
+button{
+    font-size: 20px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    height: 50px;
+    width: 160px;
+    font-family: Verdana, Tahoma, sans-serif;
+    cursor: pointer;
+}
+
+button[type="submit"] {
+    background-color:#4a90e2;
+    color: #ffffff;
+}
+
+button[type="button"] {
+    background-color: #9013fe;
+    color: #ffffff;
+}
+
+
+#register{
+    width: 230px;
+}
+
+h1{
+    font-size: 35px;
+}
+
+p, label{
+    font-size: 20px;;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.profile-body form{
+    gap: 10px;
+}
+
+.profile-body form{
+    gap: 10px;
+}
+
+input{
+    font-family: Verdana, Tahoma, sans-serif;
+    height: 35px;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    width: 350px;
+    outline: 1px solid rgb(38, 100, 124);
+}
+
+input:focus::placeholder{
+    color: transparent;
+
+}
+
+input::placeholder{
+    color: rgb(38, 100, 124);
+    font-size: 20px;
+}
+
+.profile-body img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+}
+
+
+input[type="email"],
+input[type="password"] {
+    width: 350px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.index-body button{
+    background-color: #6b0ac0;
+}
+
+.messenger-body {
+    display: flex;
+    width: 80%;
+    height: 80%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Список чатов */
+.chat-list {
+    width: 30%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-list-header {
+    padding: 20px;
+    font-size: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.chat-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    overflow-y: auto;
+}
+
+.chat-list ul li {
+    padding: 15px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.chat-list ul li a{
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.chat-list ul li:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Окно чата */
+.chat-window {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.chat-window p{
+    align-self: center;
+    margin-top: 30%;
+}
+
+.messages {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Основные стили для сообщений */
+.message {
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 60%;
+    margin-bottom: 10px;
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+/* Сообщения отправителя (ваши) */
+.from-me {
+    background-color: #4a90e2; /* Фон для сообщений пользователя */
+    align-self: flex-end; /* Выравнивание вправо */
+    color: white; /* Цвет текста */
+    border: 2px solid #357ABD; /* Граница для сообщений */
+}
+
+/* Сообщения собеседника */
+.from-them {
+    background-color: #9013fe; /* Фон для сообщений собеседника */
+    align-self: flex-start; /* Выравнивание влево */
+    color: white; /* Цвет текста */
+    border: 2px solid #7A2BB2; /* Граница для сообщений */
+}
+
+/* Форма ввода сообщения */
+.message-input {
+    display: flex;
+    padding: 10px;
+    background-color: #380466;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.message-input input {
+    flex-grow: 1;
+    padding: 5px;
+    font-size: 12px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    height: 25px;
+}
+
+.message-input button {
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4a90e2;
+    color: white;
+    cursor: pointer;
+    margin-left: 10px;
+    height: 40px;
+}
+
+.message-input button:hover {
+    background-color: #6b0ac0;
+}
+
+.context-menu {
+    position: absolute;
+    display: none;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    z-index: 1000; /* Высокий z-index, чтобы меню накладывалось */
+    padding: 5px;
+    width: 150px;
+}
+
+.context-menu-item {
+    padding: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #333;
+    transition: background-color 0.2s;
+}
+
+.context-menu-item:hover {
+    background-color: #f0f0f0;
+}
+
+.forwarded-info {
+    font-size: 0.9em;
+    color: #999;
+    margin-top: 5px;
+}
